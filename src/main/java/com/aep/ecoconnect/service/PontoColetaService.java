@@ -1,7 +1,6 @@
 package com.aep.ecoconnect.service;
 
 import com.aep.ecoconnect.model.PontoColeta;
-import com.aep.ecoconnect.repository.PontoColetaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

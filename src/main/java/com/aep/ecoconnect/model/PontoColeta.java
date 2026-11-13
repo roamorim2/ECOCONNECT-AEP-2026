@@ -3,6 +3,9 @@ package com.aep.ecoconnect.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Document(collection = "pontos_coleta")
 public class PontoColeta {
 
@@ -12,6 +15,7 @@ public class PontoColeta {
     private String tipoResiduo;
     private String endereco;
     private String capacidadeKg;
+    private List<HorarioFuncionamento> horarios = new ArrayList<>();
 
     public PontoColeta() {}
 
@@ -21,6 +25,15 @@ public class PontoColeta {
         this.tipoResiduo = tipoResiduo;
         this.endereco = endereco;
         this.capacidadeKg = capacidadeKg;
+    }
+
+    public PontoColeta(String id, String nome, String tipoResiduo, String endereco, String capacidadeKg, List<HorarioFuncionamento> horarios) {
+        this.id = id;
+        this.nome = nome;
+        this.tipoResiduo = tipoResiduo;
+        this.endereco = endereco;
+        this.capacidadeKg = capacidadeKg;
+        this.horarios = horarios;
     }
 
     public String getId() { return id; }
@@ -37,4 +50,7 @@ public class PontoColeta {
 
     public String getCapacidadeKg() { return capacidadeKg; }
     public void setCapacidadeKg(String capacidadeKg) { this.capacidadeKg = capacidadeKg; }
+
+    public List<HorarioFuncionamento> getHorarios() { return horarios; }
+    public void setHorarios(List<HorarioFuncionamento> horarios) { this.horarios = horarios; }
 }
